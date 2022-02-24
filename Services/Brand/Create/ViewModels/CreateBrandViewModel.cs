@@ -11,7 +11,7 @@ namespace Services.Brand.Create.ViewModels
         {
             if (viewModel == null)
             {
-                throw new ArgumentNullException("Objeto Vazio", nameof(viewModel));
+                throw new ArgumentNullException("Not Found", nameof(viewModel));
             }
 
             var brand = new Domain.Entities.Brand(viewModel.Name, (Domain.Enums.BrandStatusEnum)viewModel.Status);

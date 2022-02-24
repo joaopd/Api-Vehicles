@@ -15,7 +15,7 @@ namespace Services.Owner.Create.ViewModels
         {
             if (viewModel == null)
             {
-                throw new ArgumentNullException("Objeto Vazio", nameof(viewModel));
+                throw new ArgumentNullException("Not Found", nameof(viewModel));
             }
 
             CreateAddressViewModel address = viewModel.Address;

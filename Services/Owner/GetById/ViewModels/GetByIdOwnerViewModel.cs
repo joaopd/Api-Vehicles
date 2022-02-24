@@ -17,7 +17,7 @@ namespace Services.Owner.GetById.ViewModels
         {
             if (entity == null)
             {
-                throw new ArgumentNullException("Objeto Vazio", nameof(entity));
+                throw new ArgumentNullException("Not Found", nameof(entity));
             }
             GetAddressViewModel address = entity.Address;
 

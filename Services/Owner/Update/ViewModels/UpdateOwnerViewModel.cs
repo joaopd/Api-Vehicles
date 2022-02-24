@@ -5,6 +5,7 @@ namespace Services.Owner.Update.ViewModels
 {
     public class UpdateOwnerViewModel
     {
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public OwnerStatusEnum Status { get; set; }
         public string Document { get; set; }
@@ -15,7 +16,7 @@ namespace Services.Owner.Update.ViewModels
         {
             if (viewModel == null)
             {
-                throw new ArgumentNullException("Objeto Vazio", nameof(viewModel));
+                throw new ArgumentNullException("Not Found", nameof(viewModel));
             }
 
             CreateAddressViewModel address = viewModel.Address;
@@ -31,6 +32,7 @@ namespace Services.Owner.Update.ViewModels
                 throw new ArgumentNullException("Email Invalid", nameof(viewModel));
 
             Owner.SetEmail(viewModel.Email);
+            Owner.Id = viewModel.Id;
 
             return Owner;
         }

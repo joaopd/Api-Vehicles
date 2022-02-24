@@ -12,7 +12,7 @@
         {
             if (entity == null)
             {
-                throw new ArgumentNullException("Objeto Vazio", nameof(entity));
+                throw new ArgumentNullException("Not Found", nameof(entity));
             }
 
             GetAddressViewModel address = new GetAddressViewModel

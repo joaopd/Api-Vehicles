@@ -1,24 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
-using Services.Brand;
-using Services.Brand.Create.ViewModels;
-using Services.Brand.Update.ViewModels;
+using Services.Owner;
+using Services.Owner.Create.ViewModels;
+using Services.Owner.GetAll.ViewModels;
+using Services.Owner.Update.ViewModels;
 
 namespace Api.Controllers
 {
     [ApiController]
-    [Route("api/v1/brand")]
-    
-    public class BrandController : ControllerBase
+    [Route("api/v1/owner")]
+    public class OwnerController : ControllerBase
     {
         [HttpPost("")]
         public async Task<IActionResult> Create(
-            [FromServices] ICreateBrand createBrand,
-            [FromBody] CreateBrandViewModel createBrandViewModel)
+            [FromServices] ICreateOwner createOwner,
+            [FromBody] CreateOwnerViewModel createOwnerViewModel)
         {
             try
             {
-                var result = await createBrand
-                    .Execute(createBrandViewModel)
+                var result = await createOwner
+                    .Execute(createOwnerViewModel)
                     .ConfigureAwait(false);
 
                 return Ok(result);
@@ -32,15 +32,15 @@ namespace Api.Controllers
 
         [HttpPut("{id:guid}")]
         public async Task<IActionResult> Update(
-        [FromServices] IUpdateBrand updateBrand,
-        [FromBody] UpdateBrandViewModel updateBrandViewModel, Guid Id)
+        [FromServices] IUpdateOwner updateOwner,
+        [FromBody] UpdateOwnerViewModel updateOwnerViewModel, Guid id)
         {
             try
             {
-                updateBrandViewModel.Id = Id;
+                updateOwnerViewModel.Id = id;
 
-                var result = await updateBrand
-                    .Execute(updateBrandViewModel)
+                var result = await updateOwner
+                    .Execute(updateOwnerViewModel)
                     .ConfigureAwait(false);
 
                 return Ok(result);
@@ -54,11 +54,11 @@ namespace Api.Controllers
 
         [HttpGet("")]
         public async Task<IActionResult> GetAll(
-        [FromServices] IGetAllBrand getAllBrand)
+        [FromServices] IGetAllOwner getAllOwner)
         {
             try
             {
-                var result = await getAllBrand
+                var result = await getAllOwner
                     .Execute()
                     .ConfigureAwait(false);
 
@@ -73,11 +73,11 @@ namespace Api.Controllers
 
         [HttpGet("{id:guid}")]
         public async Task<IActionResult> GetById(
-        [FromServices] IGetByIdBrand getByIdBrand, Guid id)
+        [FromServices] IGetByIdOwner getByIdOwner, Guid id)
         {
             try
             {
-                var result = await getByIdBrand
+                var result = await getByIdOwner
                     .Execute(id)
                     .ConfigureAwait(false);
 
@@ -92,11 +92,11 @@ namespace Api.Controllers
 
         [HttpGet("Activated")]
         public async Task<IActionResult> GetActiveted(
-        [FromServices] IGetActivedBrand getActivedBrand)
+        [FromServices] IGetActivedOwner getActivedOwner)
         {
             try
             {
-                var result = await getActivedBrand
+                var result = await getActivedOwner
                     .Execute()
                     .ConfigureAwait(false);
 
