@@ -5,7 +5,6 @@ namespace Services.Brand.Update.ViewModels
 {
     public class UpdateBrandViewModel
     {
-        [JsonIgnore]
         public Guid Id { get; set; }
         public BrandStatusEnum Status { get; set; }
 

@@ -72,6 +72,6 @@ namespace Infraestructure.Repository.BaseRepository
                 throw ex;
             }
             return objeto;
-        }
+        }       
     }
 }

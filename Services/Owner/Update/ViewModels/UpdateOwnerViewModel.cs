@@ -32,6 +32,7 @@ namespace Services.Owner.Update.ViewModels
                 throw new ArgumentNullException("Email Invalid", nameof(viewModel));
 
             Owner.SetEmail(viewModel.Email);
+            Owner.SetEmail(viewModel.Name);
             Owner.Id = viewModel.Id;
 
             return Owner;

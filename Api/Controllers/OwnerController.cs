@@ -30,10 +30,10 @@ namespace Api.Controllers
             }
         }
 
-        [HttpPut("{id:guid}")]
+        [HttpPut("")]
         public async Task<IActionResult> Update(
         [FromServices] IUpdateOwner updateOwner,
-        [FromBody] UpdateOwnerViewModel updateOwnerViewModel, Guid id)
+        [FromBody] UpdateOwnerViewModel updateOwnerViewModel)
         {
             try
             {

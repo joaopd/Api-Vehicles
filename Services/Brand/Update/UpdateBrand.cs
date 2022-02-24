@@ -17,6 +17,13 @@ namespace Services.Brand
             {
                 Domain.Entities.Brand brand = Update;
 
+                var getBrand = await _uow.BrandRepository.GetById(Update.Id);
+
+                if (getBrand == null)
+                    throw new ArgumentNullException("Not Found");
+
+                brand.SetName(getBrand.Name);
+
                 var response = await _uow.BrandRepository.Update(brand);
 
                 return response.Id;

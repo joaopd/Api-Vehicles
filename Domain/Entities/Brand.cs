@@ -19,5 +19,9 @@ namespace Domain.Entities
         {
             Status = status;
         }
+        public void SetName(string name)
+        {
+            Name = name;
+        }
     }
 }

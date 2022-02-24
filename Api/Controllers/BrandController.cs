@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc;
 using Services.Brand;
 using Services.Brand.Create.ViewModels;
 using Services.Brand.Update.ViewModels;
@@ -30,15 +30,13 @@ namespace Api.Controllers
             }
         }
 
-        [HttpPut("{id:guid}")]
+        [HttpPut("")]
         public async Task<IActionResult> Update(
         [FromServices] IUpdateBrand updateBrand,
-        [FromBody] UpdateBrandViewModel updateBrandViewModel, Guid Id)
+        [FromBody] UpdateBrandViewModel updateBrandViewModel)
         {
             try
             {
-                updateBrandViewModel.Id = Id;
-
                 var result = await updateBrand
                     .Execute(updateBrandViewModel)
                     .ConfigureAwait(false);
@@ -47,7 +45,6 @@ namespace Api.Controllers
             }
             catch (Exception)
             {
-
                 throw new ArgumentNullException("Not Found");
             }
         }
