@@ -1,13 +1,17 @@
-﻿using Domain.UoW;
-using AppServices.Vehicle.Create.ViewModels;
-
+﻿using AppServices.Vehicle.Create.ViewModels;
+using Domain.UoW;
+using RabbitMQ.Client;
+using System.Text;
+using System.Text.Json;
 namespace AppServices.Vehicle
 {
     public class CreateVehicle : ICreateVehicle
     {
         private readonly IUnitOfWork _uow;
-        public CreateVehicle(IUnitOfWork uow)
+        private readonly RabbitMQConfigurations _configurations;
+        public CreateVehicle(IUnitOfWork uow, RabbitMQConfigurations configurations)
         {
+            _configurations = configurations;
             _uow = uow;
         }
 
@@ -21,6 +25,30 @@ namespace AppServices.Vehicle
                 Vehicle.SetBrandId(create.BrandId);
 
                 var response = await _uow.VehicleRepository.Create(Vehicle);
+
+                var factory = new ConnectionFactory()
+                {
+                    HostName = _configurations.HostName                 
+                };
+
+                using (var connection = factory.CreateConnection())
+                using (var channel = connection.CreateModel())
+                {
+                    channel.QueueDeclare(queue: "vehicleQueue",
+                                         durable: false,
+                                         exclusive: false,
+                                         autoDelete: false,
+                                         arguments: null);
+
+
+                    string message = JsonSerializer.Serialize(Vehicle);
+                    var body = Encoding.UTF8.GetBytes(message);
+
+                    channel.BasicPublish(exchange: "",
+                                        routingKey: "vehicleQueue",
+                                        basicProperties: null,
+                                        body: body);
+                }
 
                 return response.Id;
             }

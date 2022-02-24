@@ -12,9 +12,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApis(builder.Configuration);
 builder.Services.AddCfgDatabase(builder.Configuration);
 RepositoryInjection.DependencyInjectionConfig(builder.Services);
-builder.Services.AddServices();
+builder.Services.AddServices(builder.Configuration);
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

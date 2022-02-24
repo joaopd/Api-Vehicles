@@ -2,16 +2,19 @@
 using AppServices.Brand;
 using AppServices.Owner;
 using AppServices.Vehicle;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace AppServices
 {
     public static class ServiceConfig
     {
-        public static void AddServices(this IServiceCollection services)
+        public static void AddServices(this IServiceCollection services, IConfiguration Configuration)
         {
             AddServicesBrand(services);
             AddServicesOwner(services);
             AddServicesVehicle(services);
+            AddServicesRabit(services,Configuration);
         }
         public static void AddServicesBrand(this IServiceCollection services)
         {
@@ -35,6 +38,13 @@ namespace AppServices
             services.AddScoped<IUpdateVehicle, UpdateVehicle>();
             services.AddScoped<IGetAllVehicle, GetAllVehicle>();
             services.AddScoped<IGetByIdVehicle, GetByIdVehicle>();
+        }
+        public static void AddServicesRabit(this IServiceCollection services, IConfiguration Configuration)
+        {
+            var rabbitMQConfigurations = new RabbitMQConfigurations();
+
+            rabbitMQConfigurations.HostName = Configuration["RabbitMQConfigurations:HostName"];
+            services.AddSingleton(rabbitMQConfigurations);       
         }
     }
 }
