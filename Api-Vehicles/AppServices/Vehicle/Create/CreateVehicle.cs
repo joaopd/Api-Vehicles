@@ -20,13 +20,18 @@ namespace AppServices.Vehicle
         {
             try
             {
-                Domain.Entities.Vehicle Vehicle = create;
+                Domain.Entities.Vehicle vehicle = create;
 
-                Vehicle.SetOwnerId(create.OwnerId);
-                Vehicle.SetBrandId(create.BrandId);
+                vehicle.SetOwnerId(create.OwnerId);
+                vehicle.SetBrandId(create.BrandId);
 
-                var response = await _uow.VehicleRepository.Create(Vehicle);
-                var createDispather = new CreateVehicleDispather { EmailOwner = Vehicle.Owner.Email, Id = Vehicle.Id}
+                var response = await _uow.VehicleRepository.Create(vehicle);
+
+                var getOwner = await _uow.OwnerRepository.GetById(create.OwnerId);
+                if (getOwner == null)
+                    throw new ArgumentNullException("Bad Request");
+
+                var createDispather = new CreateVehicleDispather { EmailOwner = getOwner.Email, Id = vehicle.Id };
                 var factory = new ConnectionFactory()
                 {
                     HostName = _configurations.HostName                 
