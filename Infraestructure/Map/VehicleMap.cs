@@ -25,6 +25,9 @@ namespace Infraestructure.Map
                  .IsRequired(true)
                 .HasColumnType("varchar(11)");
 
+            builder.HasIndex(x => x.Renavan)
+                .IsUnique();
+
             builder.Property(x => x.Model)
                  .IsRequired(true)
                 .HasColumnType("varchar(50)");
@@ -36,6 +39,14 @@ namespace Infraestructure.Map
             builder.Property(x => x.Value)
                  .IsRequired(true)
                 .HasColumnType("decimal(5,2)");
+
+            builder.HasOne(x => x.Owner)
+                   .WithMany(x => x.Vehicle)
+                   .HasForeignKey(x => x.OwnerId);
+
+            builder.HasOne(x => x.Brand)
+                   .WithMany(x => x.Vehicle)
+                   .HasForeignKey(x => x.BrandId);
         }
     }
 }

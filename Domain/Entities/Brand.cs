@@ -6,6 +6,8 @@ namespace Domain.Entities
     {
         public string Name { get; private set; }
         public BrandStatusEnum Status { get; private set; }
+        public List<Vehicle> Vehicle { get; private set; }
+
 
         public Brand() { }
 

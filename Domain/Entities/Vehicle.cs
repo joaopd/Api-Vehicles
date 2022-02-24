@@ -4,7 +4,6 @@ namespace Domain.Entities
 {
     public class Vehicle : BaseEntity
     {
-
         public string Renavan { get; private set; }
         public string Model { get; private set; }
         public string YearOfManufacture { get; private set; }
@@ -12,7 +11,9 @@ namespace Domain.Entities
         public string Mileage { get; private set; }
         public VehicleStatusEnum Status { get; private set; }
         public decimal Value { get; private set; }
+        public Guid OwnerId{ get; set; }
         public Owner Owner { get; private set; }
+        public Guid BrandId { get; set; }
         public Brand Brand { get; private set; }
         private Vehicle() { }
         public Vehicle(string renavan, string model, string yearOfManufacture, string yearModel, string mileage, VehicleStatusEnum status, decimal value)
@@ -26,14 +27,14 @@ namespace Domain.Entities
             Value = value;
         }
 
-        public void SetBrand(Brand brand)
+        public void SetBrandId(Guid brandId)
         {
-            Brand = brand;
+            BrandId = brandId;
         }
 
-        public void SetOwner(Owner owner)
+        public void SetOwnerId(Guid ownerId)
         {
-            Owner = owner;
+            OwnerId = ownerId;
         }
     }
 }

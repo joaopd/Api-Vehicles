@@ -11,6 +11,7 @@ namespace Domain.Entities
         public string Email { get; private set; }
         public OwnerStatusEnum Status { get; private set; }
         public Address Address { get; private set; }
+        public List<Vehicle> Vehicle{ get; private set; } 
 
         private Owner() { }
 

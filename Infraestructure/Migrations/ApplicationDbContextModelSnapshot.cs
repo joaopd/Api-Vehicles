@@ -128,6 +128,9 @@ namespace Infraestructure.Migrations
 
                     b.HasIndex("OwnerId");
 
+                    b.HasIndex("Renavan")
+                        .IsUnique();
+
                     b.ToTable("Vehicles");
                 });
 
@@ -173,13 +176,13 @@ namespace Infraestructure.Migrations
             modelBuilder.Entity("Domain.Entities.Vehicle", b =>
                 {
                     b.HasOne("Domain.Entities.Brand", "Brand")
-                        .WithMany()
+                        .WithMany("Vehicle")
                         .HasForeignKey("BrandId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Entities.Owner", "Owner")
-                        .WithMany()
+                        .WithMany("Vehicle")
                         .HasForeignKey("OwnerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -187,6 +190,16 @@ namespace Infraestructure.Migrations
                     b.Navigation("Brand");
 
                     b.Navigation("Owner");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Brand", b =>
+                {
+                    b.Navigation("Vehicle");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Owner", b =>
+                {
+                    b.Navigation("Vehicle");
                 });
 #pragma warning restore 612, 618
         }

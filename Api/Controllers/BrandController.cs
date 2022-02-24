@@ -1,13 +1,13 @@
-    using Microsoft.AspNetCore.Mvc;
-using Services.Brand;
-using Services.Brand.Create.ViewModels;
-using Services.Brand.Update.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using AppServices.Brand;
+using AppServices.Brand.Create.ViewModels;
+using AppServices.Brand.Update.ViewModels;
 
 namespace Api.Controllers
 {
     [ApiController]
     [Route("api/v1/brand")]
-    
+
     public class BrandController : ControllerBase
     {
         [HttpPost("")]
