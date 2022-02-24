@@ -2,7 +2,7 @@
 using Infraestructure.ApplicationDbContex;
 using Services.Owner.Update.ViewModels;
 
-namespace Services.Owner.Update
+namespace Services.Owner
 {
     public class UpdateOwner :  IUpdateOwner
     {

@@ -1,6 +1,6 @@
 ﻿using Services.Brand.GetById.ViewModels;
 
-namespace Services.Brand.GetById
+namespace Services.Brand
 {
     public interface IGetByIdBrand
     {

@@ -1,6 +1,6 @@
 ﻿using Services.Owner.GetById.ViewModels;
 
-namespace Services.Owner.GetById
+namespace Services.Owner
 {
     public interface IGetByIdOwner
     {

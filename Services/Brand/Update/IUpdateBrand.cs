@@ -1,6 +1,6 @@
 ﻿using Services.Brand.Update.ViewModels;
 
-namespace Services.Brand.Update
+namespace Services.Brand
 {
     public interface IUpdateBrand
     {

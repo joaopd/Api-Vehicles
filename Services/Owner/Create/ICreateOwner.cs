@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.Owner.Create
+namespace Services.Owner
 {
     public interface ICreateOwner
     {

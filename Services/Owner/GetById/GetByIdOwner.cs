@@ -2,7 +2,7 @@
 using Infraestructure.ApplicationDbContex;
 using Services.Owner.GetById.ViewModels;
 
-namespace Services.Owner.GetById
+namespace Services.Owner
 {
     public class GetByIdOwner :  IGetByIdOwner
     {

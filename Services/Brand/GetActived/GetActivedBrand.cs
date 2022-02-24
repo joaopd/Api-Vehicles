@@ -2,7 +2,7 @@
 using Infraestructure.ApplicationDbContex;
 using Services.Brand.GetActived.ViewModels;
 
-namespace Services.Brand.GetActived
+namespace Services.Brand
 {
     public class GetActivedBrand :  IGetActivedBrand
     {

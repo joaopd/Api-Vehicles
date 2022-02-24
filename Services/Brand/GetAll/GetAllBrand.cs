@@ -2,7 +2,7 @@
 using Infraestructure.ApplicationDbContex;
 using Services.Brand.GetAll.ViewModels;
 
-namespace Services.Brand.GetAll
+namespace Services.Brand
 {
     public class GetAllBrand :  IGetAllBrand
     {

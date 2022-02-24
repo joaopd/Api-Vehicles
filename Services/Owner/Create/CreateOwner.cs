@@ -2,7 +2,7 @@
 using Infraestructure.ApplicationDbContex;
 using Services.Owner.Create.ViewModels;
 
-namespace Services.Owner.Create
+namespace Services.Owner
 {
     public class CreateOwner :  ICreateOwner
     {

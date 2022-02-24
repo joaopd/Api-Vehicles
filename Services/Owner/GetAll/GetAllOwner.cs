@@ -2,7 +2,7 @@
 using Infraestructure.ApplicationDbContex;
 using Services.Owner.GetAll.ViewModels;
 
-namespace Services.Owner.GetAll
+namespace Services.Owner
 {
     public class GetAllOwner :  IGetAllOwner
     {

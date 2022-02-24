@@ -2,7 +2,7 @@
 using Infraestructure.ApplicationDbContex;
 using Services.Brand.Create.ViewModels;
 
-namespace Services.Brand.Create
+namespace Services.Brand
 {
     public class CreateBrand :  ICreateBrand
     {

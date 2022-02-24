@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services.Brand.Create
+namespace Services.Brand
 {
     public interface ICreateBrand
     {

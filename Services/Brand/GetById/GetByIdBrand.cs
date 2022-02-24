@@ -2,7 +2,7 @@
 using Infraestructure.ApplicationDbContex;
 using Services.Brand.GetById.ViewModels;
 
-namespace Services.Brand.GetById
+namespace Services.Brand
 {
     public class GetByIdBrand :  IGetByIdBrand
     {

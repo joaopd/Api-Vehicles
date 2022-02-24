@@ -1,6 +1,6 @@
 ﻿using Services.Brand.GetAll.ViewModels;
 
-namespace Services.Brand.GetAll
+namespace Services.Brand
 {
     public interface IGetAllBrand
     {
