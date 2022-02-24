@@ -1,21 +1,20 @@
 ﻿using Domain.UoW;
-using Infraestructure.ApplicationDbContex;
 using Services.Owner.GetActived.ViewModels;
 
 namespace Services.Owner
 {
-    public class GetActivedOwner :  IGetActivedOwner
+    public class GetActivedOwner : IGetActivedOwner
     {
         private readonly IUnitOfWork _uow;
         public GetActivedOwner(IUnitOfWork uow)
         {
             _uow = uow;
-        }     
+        }
 
         public async Task<IEnumerable<GetActivedOwnerViewModel>> Execute()
         {
             try
-            {                
+            {
                 var response = await _uow.OwnerRepository.GetList(expression: x => x.Status == Domain.Enums.OwnerStatusEnum.Actived);
 
                 if (response == null)

@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Services.Brand.Create;
 using Services.Brand.Create.ViewModels;
 
 namespace Api.Controllers

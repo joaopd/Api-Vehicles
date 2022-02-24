@@ -13,7 +13,7 @@ namespace Domain.Entities
         {
             Name = name;
             Status = status;
-        }   
+        }
 
         public void SetStatus(BrandStatusEnum status)
         {

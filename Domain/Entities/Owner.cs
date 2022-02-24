@@ -27,7 +27,7 @@ namespace Domain.Entities
                 return new Cpf(document).EhValido;
 
             return new Cnpj(document).EhValido;
-        }       
+        }
 
         public bool EmailValid(string email)
         {

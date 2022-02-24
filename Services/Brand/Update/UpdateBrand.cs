@@ -1,16 +1,15 @@
 ﻿using Domain.UoW;
-using Infraestructure.ApplicationDbContex;
 using Services.Brand.Update.ViewModels;
 
 namespace Services.Brand
 {
-    public class UpdateBrand :  IUpdateBrand
+    public class UpdateBrand : IUpdateBrand
     {
         private readonly IUnitOfWork _uow;
         public UpdateBrand(IUnitOfWork uow)
         {
             _uow = uow;
-        }     
+        }
 
         public async Task<Guid> Execute(UpdateBrandViewModel Update)
         {

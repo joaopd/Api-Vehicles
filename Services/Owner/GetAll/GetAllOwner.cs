@@ -1,21 +1,20 @@
 ﻿using Domain.UoW;
-using Infraestructure.ApplicationDbContex;
 using Services.Owner.GetAll.ViewModels;
 
 namespace Services.Owner
 {
-    public class GetAllOwner :  IGetAllOwner
+    public class GetAllOwner : IGetAllOwner
     {
         private readonly IUnitOfWork _uow;
         public GetAllOwner(IUnitOfWork uow)
         {
             _uow = uow;
-        }     
+        }
 
         public async Task<IEnumerable<GetAllOwnerViewModel>> Execute()
         {
             try
-            {                
+            {
                 var response = await _uow.OwnerRepository.GetList();
 
                 if (response == null)

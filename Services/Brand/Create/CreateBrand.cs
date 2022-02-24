@@ -1,16 +1,15 @@
 ﻿using Domain.UoW;
-using Infraestructure.ApplicationDbContex;
 using Services.Brand.Create.ViewModels;
 
 namespace Services.Brand
 {
-    public class CreateBrand :  ICreateBrand
+    public class CreateBrand : ICreateBrand
     {
         private readonly IUnitOfWork _uow;
         public CreateBrand(IUnitOfWork uow)
         {
             _uow = uow;
-        }     
+        }
 
         public async Task<Guid> Execute(CreateBrandViewModel create)
         {

@@ -4,12 +4,12 @@ namespace Services.Brand.GetById.ViewModels
 {
     public class GetByIdBrandViewModel
     {
-        public Guid Id{ get; set; }
-        public string Name{ get; set; }
-        public DateTime CreateTime{ get; set; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public DateTime CreateTime { get; set; }
         public BrandStatusEnum Status { get; set; }
 
-        public static implicit operator GetByIdBrandViewModel (Domain.Entities.Brand entity)
+        public static implicit operator GetByIdBrandViewModel(Domain.Entities.Brand entity)
         {
             if (entity == null)
             {

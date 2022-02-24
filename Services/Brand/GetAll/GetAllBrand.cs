@@ -1,21 +1,20 @@
 ﻿using Domain.UoW;
-using Infraestructure.ApplicationDbContex;
 using Services.Brand.GetAll.ViewModels;
 
 namespace Services.Brand
 {
-    public class GetAllBrand :  IGetAllBrand
+    public class GetAllBrand : IGetAllBrand
     {
         private readonly IUnitOfWork _uow;
         public GetAllBrand(IUnitOfWork uow)
         {
             _uow = uow;
-        }     
+        }
 
         public async Task<IEnumerable<GetAllBrandViewModel>> Execute()
         {
             try
-            {                
+            {
                 var response = await _uow.BrandRepository.GetList();
 
                 if (response == null)

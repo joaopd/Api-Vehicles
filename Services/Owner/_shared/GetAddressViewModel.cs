@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Services.Owner._shared
+﻿namespace Services.Owner._shared
 {
     public class GetAddressViewModel
     {
@@ -22,12 +16,12 @@ namespace Services.Owner._shared
             }
 
             GetAddressViewModel address = new GetAddressViewModel
-            { 
+            {
                 Cep = entity.Cep,
-                State= entity.State,
+                State = entity.State,
                 City = entity.City,
                 Neighborhood = entity.Neighborhood,
-                Street = entity.Street 
+                Street = entity.Street
             };
 
             return address;

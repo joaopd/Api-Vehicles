@@ -1,9 +1,5 @@
-﻿using Domain.Interfaces;
-using Infraestructure.Repository;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Services.Brand;
-using Services.Brand.Create;
-using Services.Brand.Update;
 using Services.Owner;
 
 namespace Services

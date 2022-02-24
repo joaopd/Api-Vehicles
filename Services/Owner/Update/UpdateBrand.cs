@@ -1,16 +1,15 @@
 ﻿using Domain.UoW;
-using Infraestructure.ApplicationDbContex;
 using Services.Owner.Update.ViewModels;
 
 namespace Services.Owner
 {
-    public class UpdateOwner :  IUpdateOwner
+    public class UpdateOwner : IUpdateOwner
     {
         private readonly IUnitOfWork _uow;
         public UpdateOwner(IUnitOfWork uow)
         {
             _uow = uow;
-        }     
+        }
 
         public async Task<Guid> Execute(UpdateOwnerViewModel Update)
         {
