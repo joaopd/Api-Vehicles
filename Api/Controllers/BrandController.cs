@@ -23,10 +23,10 @@ namespace Api.Controllers
 
                 return Ok(result);
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw new ArgumentNullException("Not Found");
+                throw new ArgumentNullException("Not Found", nameof(e));
             }
         }
 
@@ -43,9 +43,9 @@ namespace Api.Controllers
 
                 return Ok(result);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new ArgumentNullException("Not Found");
+                throw new ArgumentNullException("Not Found", nameof(e));
             }
         }
 
@@ -61,10 +61,10 @@ namespace Api.Controllers
 
                 return Ok(result);
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw new ArgumentNullException("Not Found");
+                throw new ArgumentNullException("Not Found", e);
             }
         }
 
@@ -80,10 +80,10 @@ namespace Api.Controllers
 
                 return Ok(result);
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw new ArgumentNullException("Not Found");
+                throw new ArgumentNullException("Not Found", e);
             }
         }
 
@@ -99,10 +99,10 @@ namespace Api.Controllers
 
                 return Ok(result);
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw new ArgumentNullException("Not Found");
+                throw new ArgumentNullException("Not Found", e);
             }
         }
     }

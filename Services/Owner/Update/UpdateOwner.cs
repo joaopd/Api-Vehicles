@@ -21,9 +21,9 @@ namespace Services.Owner
 
                 return response.Id;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new ArgumentNullException("Bad Request");
+                throw new ArgumentNullException("Bad Request", nameof(e));
             }
         }
     }

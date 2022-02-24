@@ -23,10 +23,10 @@ namespace Api.Controllers
 
                 return Ok(result);
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw new ArgumentNullException("Not Found");
+                throw new ArgumentNullException("Not Found", e);
             }
         }
 
@@ -37,8 +37,6 @@ namespace Api.Controllers
         {
             try
             {
-                updateOwnerViewModel.Id = id;
-
                 var result = await updateOwner
                     .Execute(updateOwnerViewModel)
                     .ConfigureAwait(false);

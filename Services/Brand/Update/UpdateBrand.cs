@@ -28,9 +28,9 @@ namespace Services.Brand
 
                 return response.Id;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new ArgumentNullException("Bad Request");
+                throw new ArgumentNullException("Bad Request", nameof(e));
             }
         }
     }

@@ -24,9 +24,9 @@ namespace Services.Brand
 
                 return brandViewModel;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new ArgumentNullException("Not Found");
+                throw new ArgumentNullException("Not Found", e);
             }
         }
     }

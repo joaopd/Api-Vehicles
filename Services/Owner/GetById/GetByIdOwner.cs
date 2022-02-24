@@ -24,9 +24,9 @@ namespace Services.Owner
 
                 return OwnerViewModel;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new ArgumentNullException("Not Found");
+                throw new ArgumentNullException("Not Found", nameof(e));
             }
         }
     }
