@@ -1,4 +1,5 @@
-﻿using AppServices.Vehicle.Create.ViewModels;
+﻿using AppServices.Vehicle.Create;
+using AppServices.Vehicle.Create.ViewModels;
 using Domain.UoW;
 using RabbitMQ.Client;
 using System.Text;
@@ -25,7 +26,7 @@ namespace AppServices.Vehicle
                 Vehicle.SetBrandId(create.BrandId);
 
                 var response = await _uow.VehicleRepository.Create(Vehicle);
-
+                var createDispather = new CreateVehicleDispather { EmailOwner = Vehicle.Owner.Email, Id = Vehicle.Id}
                 var factory = new ConnectionFactory()
                 {
                     HostName = _configurations.HostName                 
@@ -41,7 +42,7 @@ namespace AppServices.Vehicle
                                          arguments: null);
 
 
-                    string message = JsonSerializer.Serialize(Vehicle);
+                    string message = JsonSerializer.Serialize(createDispather);
                     var body = Encoding.UTF8.GetBytes(message);
 
                     channel.BasicPublish(exchange: "",
