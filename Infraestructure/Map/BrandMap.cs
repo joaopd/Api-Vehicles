@@ -12,10 +12,13 @@ namespace Infraestructure.Map
 
             builder.Property(x => x.Name)
                  .IsRequired(true)
-                .HasColumnType("varchar(14)");
+                 .HasColumnType("varchar(14)");
 
             builder.Property(x => x.Status)
                  .IsRequired(true);
+
+            builder.HasIndex(x => x.Name)
+                   .IsUnique();
         }
     }
 }
