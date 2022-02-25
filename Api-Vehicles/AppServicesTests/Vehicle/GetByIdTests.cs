@@ -1,12 +1,7 @@
 ﻿using AppServices.Vehicle;
 using AppServices.Vehicle.GetById.ViewModels;
-using Domain.Interfaces;
-using Domain.UoW;
 using Moq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -33,7 +28,7 @@ namespace AppServicesTests.Vehicle
             _service = _serviceMock.Object;
 
             var _record = await _service.Execute(Id);
-            Assert.Null(_record);         
+            Assert.Null(_record);
         }
     }
 }

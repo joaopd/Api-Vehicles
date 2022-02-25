@@ -23,14 +23,14 @@ namespace InfraextrutureTests.TestsEntities
         [Trait("CRUD", "Owner")]
         public async Task CRUD_Owner_Returns_OK()
         {
-            using(var context = _seviceProvide.GetService<ApplicationDbContext>())
+            using (var context = _seviceProvide.GetService<ApplicationDbContext>())
             {
                 OwnerRepository _repository = new OwnerRepository(context);
 
                 Address address = new Address("57305480", "AL",
-                   "Arapiraca", "Baixão", "Praça Coronel José de Farias");                
+                   "Arapiraca", "Baixão", "Praça Coronel José de Farias");
 
-                Owner _entity = new Owner(Faker.Name.FullName(),Domain.Enums.OwnerStatusEnum.Actived, address);
+                Owner _entity = new Owner(Faker.Name.FullName(), Domain.Enums.OwnerStatusEnum.Actived, address);
 
                 _entity.SetDocument("93443766000121");
                 _entity.SetEmail(Faker.Internet.Email());

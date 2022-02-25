@@ -22,7 +22,7 @@ namespace InfraextrutureTests.TestsEntities
         [Trait("CRUD", "Brand")]
         public async Task CRUD_Brand_Returns_OK()
         {
-            using(var context = _seviceProvide.GetService<ApplicationDbContext>())
+            using (var context = _seviceProvide.GetService<ApplicationDbContext>())
             {
                 BrandRepository _repository = new BrandRepository(context);
                 Brand _entity = new Brand(Faker.Name.FullName(), Domain.Enums.BrandStatusEnum.Actived);

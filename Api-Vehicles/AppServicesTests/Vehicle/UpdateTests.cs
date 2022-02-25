@@ -8,7 +8,7 @@ namespace AppServicesTests.Vehicle
     public class UpdateTests : VehicleTests
     {
         private IUpdateVehicle _service;
-        private Mock<IUpdateVehicle> _serviceMock;      
+        private Mock<IUpdateVehicle> _serviceMock;
 
         [Fact(DisplayName = "Update_Is_ok")]
         public async Task Update_Is_Ok()
@@ -19,7 +19,7 @@ namespace AppServicesTests.Vehicle
 
             var result = await _service.Execute(updateVehicleModel);
             Assert.NotNull(result);
-            Assert.True(result == Id);           
+            Assert.True(result == Id);
         }
     }
 }

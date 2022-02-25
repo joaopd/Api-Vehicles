@@ -1,12 +1,7 @@
 ﻿using AppServices.Owner;
 using AppServices.Owner.GetById.ViewModels;
-using Domain.Interfaces;
-using Domain.UoW;
 using Moq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -34,7 +29,7 @@ namespace AppServicesTests.Owner
             _service = _serviceMock.Object;
 
             var _record = await _service.Execute(Id);
-            Assert.Null(_record);         
+            Assert.Null(_record);
         }
     }
 }

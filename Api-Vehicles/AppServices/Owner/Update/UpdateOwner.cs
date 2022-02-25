@@ -1,5 +1,5 @@
-﻿using Domain.UoW;
-using AppServices.Owner.Update.ViewModels;
+﻿using AppServices.Owner.Update.ViewModels;
+using Domain.UoW;
 
 namespace AppServices.Owner
 {

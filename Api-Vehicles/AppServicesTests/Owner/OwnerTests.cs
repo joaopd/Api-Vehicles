@@ -1,11 +1,11 @@
-﻿using AppServices.Owner.Create.ViewModels;
+﻿using AppServices.Enums;
+using AppServices.Owner._shared;
+using AppServices.Owner.Create.ViewModels;
 using AppServices.Owner.GetAll.ViewModels;
 using AppServices.Owner.GetById.ViewModels;
 using AppServices.Owner.Update.ViewModels;
-using AppServices.Enums;
 using System;
 using System.Collections.Generic;
-using AppServices.Owner._shared;
 
 namespace AppServicesTests.Owner
 {

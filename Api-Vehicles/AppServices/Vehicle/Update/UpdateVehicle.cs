@@ -1,5 +1,5 @@
-﻿using Domain.UoW;
-using AppServices.Vehicle.Updates.ViewModels;
+﻿using AppServices.Vehicle.Updates.ViewModels;
+using Domain.UoW;
 
 namespace AppServices.Vehicle
 {

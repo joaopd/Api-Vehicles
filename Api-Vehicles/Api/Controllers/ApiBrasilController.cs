@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
 using AppServices.Apis.Cep.GetCep;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {

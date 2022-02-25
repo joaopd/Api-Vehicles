@@ -34,7 +34,7 @@ namespace AppServices.Vehicle
                 var createDispather = new CreateVehicleDispather { EmailOwner = getOwner.Email, Id = vehicle.Id };
                 var factory = new ConnectionFactory()
                 {
-                    HostName = _configurations.HostName                 
+                    HostName = _configurations.HostName
                 };
 
                 using (var connection = factory.CreateConnection())

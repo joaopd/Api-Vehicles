@@ -1,5 +1,5 @@
-﻿using Domain.UoW;
-using AppServices.Brand.GetAll.ViewModels;
+﻿using AppServices.Brand.GetAll.ViewModels;
+using Domain.UoW;
 
 namespace AppServices.Brand
 {

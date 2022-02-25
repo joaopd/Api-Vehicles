@@ -1,12 +1,5 @@
 ﻿using AppServices.Brand;
-using AppServices.Brand.Update.ViewModels;
-using Domain.Interfaces;
-using Domain.UoW;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -28,7 +21,7 @@ namespace AppServicesTests.Brand
 
             var result = await _service.Execute(updatebrandModel);
             Assert.NotNull(result);
-            Assert.True(result == Id);           
+            Assert.True(result == Id);
         }
     }
 }

@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using AppServices.Apis.Cep.GetCep;
+using AppServices.Apis.Cep.GetCep.Services;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Refit;
-using AppServices.Apis.Cep.GetCep;
-using AppServices.Apis.Cep.GetCep.Services;
 
 namespace AppServices
 {

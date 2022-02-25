@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
 using AppServices.Vehicle;
 using AppServices.Vehicle.Create.ViewModels;
 using AppServices.Vehicle.Updates.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {

@@ -1,5 +1,5 @@
-using Infraestructure;
 using AppServices;
+using Infraestructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,12 +1,5 @@
 ﻿using AppServices.Owner;
-using AppServices.Owner.Update.ViewModels;
-using Domain.Interfaces;
-using Domain.UoW;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -28,7 +21,7 @@ namespace AppServicesTests.Owner
 
             var result = await _service.Execute(updateOwnerModel);
             Assert.NotNull(result);
-            Assert.True(result == Id);           
+            Assert.True(result == Id);
         }
     }
 }

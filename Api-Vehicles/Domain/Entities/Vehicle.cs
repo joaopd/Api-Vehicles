@@ -11,7 +11,7 @@ namespace Domain.Entities
         public string Mileage { get; private set; }
         public VehicleStatusEnum Status { get; private set; }
         public decimal Value { get; private set; }
-        public Guid OwnerId{ get; set; }
+        public Guid OwnerId { get; set; }
         public Owner Owner { get; private set; }
         public Guid BrandId { get; set; }
         public Brand Brand { get; private set; }

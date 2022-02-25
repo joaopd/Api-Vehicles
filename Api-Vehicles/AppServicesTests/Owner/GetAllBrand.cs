@@ -1,12 +1,8 @@
 ﻿using AppServices.Owner;
 using AppServices.Owner.GetAll.ViewModels;
-using Domain.Interfaces;
-using Domain.UoW;
 using Moq;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -26,7 +22,7 @@ namespace AppServicesTests.Owner
 
             var result = await _service.Execute();
             Assert.NotNull(result);
-            Assert.True(result.Count() ==10);
+            Assert.True(result.Count() == 10);
 
             var listResult = new List<GetAllOwnerViewModel>();
 

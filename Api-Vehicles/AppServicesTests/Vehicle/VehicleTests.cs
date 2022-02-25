@@ -37,7 +37,7 @@ namespace AppServicesTests.Vehicle
                 var model = new GetAllVehicleViewModel()
                 {
                     Status = VehicleStatusEnum.Available,
-                   
+
                     Id = Guid.NewGuid()
                 };
                 listVehicleModel.Add(model);
@@ -46,7 +46,7 @@ namespace AppServicesTests.Vehicle
             createVehicleModel = new CreateVehicleViewModel()
             {
                 Status = VehicleStatusEnum.Available,
-             
+
             };
 
             VehicleModel = new GetByIdVehicleViewModel()

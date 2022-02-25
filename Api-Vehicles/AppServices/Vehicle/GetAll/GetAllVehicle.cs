@@ -1,6 +1,6 @@
-﻿using Domain.UoW;
+﻿using AppServices.Vehicle.GetAll.ViewModels;
+using Domain.UoW;
 using Microsoft.EntityFrameworkCore;
-using AppServices.Vehicle.GetAll.ViewModels;
 
 namespace AppServices.Vehicle
 {

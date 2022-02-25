@@ -1,9 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using AppServices.Brand;
+﻿using AppServices.Brand;
 using AppServices.Owner;
 using AppServices.Vehicle;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AppServices
 {
@@ -14,7 +13,7 @@ namespace AppServices
             AddServicesBrand(services);
             AddServicesOwner(services);
             AddServicesVehicle(services);
-            AddServicesRabit(services,Configuration);
+            AddServicesRabit(services, Configuration);
         }
         public static void AddServicesBrand(this IServiceCollection services)
         {
@@ -44,7 +43,7 @@ namespace AppServices
             var rabbitMQConfigurations = new RabbitMQConfigurations();
 
             rabbitMQConfigurations.HostName = Configuration["RabbitMQConfigurations:HostName"];
-            services.AddSingleton(rabbitMQConfigurations);       
+            services.AddSingleton(rabbitMQConfigurations);
         }
     }
 }
