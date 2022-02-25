@@ -36,5 +36,9 @@ namespace Domain.Entities
         {
             OwnerId = ownerId;
         }
+        public void SetStatus(VehicleStatusEnum statusEnum)
+        {
+            Status = statusEnum;
+        }
     }
 }

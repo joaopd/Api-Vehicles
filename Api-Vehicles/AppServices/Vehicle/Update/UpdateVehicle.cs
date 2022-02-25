@@ -25,10 +25,10 @@ namespace AppServices.Vehicle
 
                 Domain.Entities.Vehicle Vehicle = update;
 
-                var response = await _uow.VehicleRepository.Update(Vehicle);
-
                 Vehicle.SetOwnerId(update.OwnerId);
                 Vehicle.SetBrandId(update.BrandId);
+
+                var response = await _uow.VehicleRepository.Update(Vehicle);
 
                 return response.Id;
             }
